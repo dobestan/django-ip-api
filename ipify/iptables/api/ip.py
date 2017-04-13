@@ -22,8 +22,11 @@ class IpCheckAPIView(APIView):
             in request.META.items()
             if key.startswith("HTTP")
         }
+
+        note = request.GET.get("note") or request.META.get("HTTP_X_NOTE")
         log = ip.log_set.create(
             meta=meta,
+            note=note,
         )
 
         content = {
