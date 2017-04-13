@@ -28,10 +28,12 @@ class Log(models.Model):
     )
 
     meta = JSONField(
+        blank=True,
+        null=True,
         verbose_name="HTTP Headers",
         help_text="""
         HttpRequest.META
-        """
+        """,
     )
 
     class Meta:
