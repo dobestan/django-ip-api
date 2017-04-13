@@ -9,6 +9,10 @@ class Ip(models.Model):
 
     objects = IpManager()
 
+    ip_address = models.GenericIPAddressField(
+        verbose_name="IP 주소",
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="생성일",
@@ -19,4 +23,4 @@ class Ip(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        pass
+        return self.ip_address

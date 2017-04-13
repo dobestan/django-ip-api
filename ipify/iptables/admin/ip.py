@@ -10,12 +10,17 @@ class IpModelAdmin(admin.ModelAdmin):
     )
 
     list_display = admin.ModelAdmin.list_display + (
+        "id",
+        "ip_address",
+        "created_at",
     )
 
     list_filter = admin.ModelAdmin.list_filter + (
+        "created_at",
     )
 
     search_fields = admin.ModelAdmin.search_fields + (
+        "ip_address",
     )
 
     inlines = (
