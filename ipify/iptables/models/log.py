@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 
 class LogManager(models.Manager):
@@ -26,6 +27,12 @@ class Log(models.Model):
         verbose_name="비고",
     )
 
+    meta = JSONField(
+        verbose_name="HTTP Headers",
+        help_text="""
+        HttpRequest.META
+        """
+    )
 
     class Meta:
         verbose_name = "IP 로그"
