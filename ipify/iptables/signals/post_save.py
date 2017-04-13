@@ -9,7 +9,10 @@ from iptables.models import Ip
 @receiver(post_save, sender=Ip)
 def post_save_ip(sender, instance, created, **kwargs):
     if created:
-        geoip = GeoIP2()
-        city = geoip.city(instance.ip_address)
-        instance.city = city
-        instance.save()
+        try:
+            geoip = GeoIP2()
+            city = geoip.city(instance.ip_address)
+            instance.city = city
+            instance.save()
+        except:
+            pass

@@ -34,6 +34,7 @@ class IpCheckAPIView(APIView):
         content = {
             "ip": ip.ip_address,
         }
+        content.update(ip.city)
 
         return Response(
             content,
