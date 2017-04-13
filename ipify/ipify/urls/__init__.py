@@ -11,6 +11,8 @@ admin.site.index_title = "관리자 메인페이지"
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^api/', include("ipify.urls.api", namespace="api")),
 ]
 
 
