@@ -2,7 +2,10 @@ from django.db import models
 
 
 class IpManager(models.Manager):
-    pass
+
+    def get_queryset(self):
+        return super(IpManager, self).get_queryset()\
+            .prefetch_related("log_set")\
 
 
 class Ip(models.Model):
@@ -19,7 +22,7 @@ class Ip(models.Model):
     )
 
     class Meta:
-        verbose_name = "IP Address"
+        verbose_name = "IP 주소"
         verbose_name_plural = verbose_name
 
     def __str__(self):

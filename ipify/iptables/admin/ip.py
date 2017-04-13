@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from iptables.models import Ip
 
+from .log import LogModelInline
+
 
 @admin.register(Ip)
 class IpModelAdmin(admin.ModelAdmin):
@@ -24,4 +26,5 @@ class IpModelAdmin(admin.ModelAdmin):
     )
 
     inlines = (
+        LogModelInline,
     )
