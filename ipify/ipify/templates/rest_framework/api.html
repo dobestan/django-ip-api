@@ -1,0 +1,29 @@
+{% extends "rest_framework/base.html" %}
+{% load staticfiles %}
+
+
+{% block style %}
+  {% block bootstrap_theme %}
+    <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap-tweaks.css" %}"/>
+  {% endblock %}
+
+  <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/prettify.css" %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/default.css" %}"/>
+
+  <style>
+    @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+    * {
+      font-family: "Spoqa Han Sans","Apple SD Gothic Neo","Nanum Barun Gothic","Malgun Gothic","돋옴",Dotum,sans-serif !important;
+    }
+  </style>
+
+{% endblock %}
+
+
+{% block branding %}
+  <a class='navbar-brand' href='{% url "api:ip-check" %}'>
+    IP API
+  </a>
+{% endblock %}
