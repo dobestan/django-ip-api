@@ -1,2 +1,4 @@
 requests
 django
+dj-database-url
+psycopg2
