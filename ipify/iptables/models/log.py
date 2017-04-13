@@ -28,6 +28,7 @@ class Log(models.Model):
     )
 
     meta = JSONField(
+        default={},
         blank=True,
         null=True,
         verbose_name="HTTP Headers",

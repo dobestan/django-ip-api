@@ -30,6 +30,7 @@ class Ip(models.Model):
     )
 
     city = JSONField(
+        default={},
         blank=True,
         null=True,
         verbose_name="GeoIP City Information",
