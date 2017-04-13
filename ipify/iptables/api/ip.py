@@ -1,5 +1,7 @@
 import json
 
+from django.contrib.gis.geoip2 import GeoIP2
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status

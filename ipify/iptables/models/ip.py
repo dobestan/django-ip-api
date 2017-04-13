@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 
 class IpManager(models.Manager):
@@ -26,6 +27,12 @@ class Ip(models.Model):
         blank=True,
         null=True,
         verbose_name="비고",
+    )
+
+    city = JSONField(
+        blank=True,
+        null=True,
+        verbose_name="GeoIP City Information",
     )
 
     class Meta:

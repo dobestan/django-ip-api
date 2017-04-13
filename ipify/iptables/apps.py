@@ -5,4 +5,4 @@ class IptablesAppConfig(AppConfig):
     name = "iptables"
 
     def ready(self):
-        pass
+        from iptables.signals.post_save import post_save_ip
