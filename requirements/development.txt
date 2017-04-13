@@ -1,0 +1,3 @@
+-r ./production.txt
+django-extensions
+django-debug-toolbar
