@@ -19,6 +19,14 @@ class Log(models.Model):
         verbose_name="생성일",
     )
 
+    note = models.CharField(
+        max_length=64,
+        blank=True,
+        null=True,
+        verbose_name="비고",
+    )
+
+
     class Meta:
         verbose_name = "IP 로그"
         verbose_name_plural = verbose_name
